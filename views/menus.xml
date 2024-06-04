@@ -1,0 +1,26 @@
+<odoo>
+
+    <data>
+        <menuitem name="Store" id="odoo_prueba.menu_root"/>
+                                                                                                                
+           <menuitem name="Usuarios" id="odoo_prueba.create_cliente" parent="odoo_prueba.menu_root"  sequence="1" action="odoo_prueba._action_window_create_cliente"/>
+        
+           <menuitem name="Tienda" id="odoo_prueba.tienda" parent="odoo_prueba.menu_root" sequence="3"/>
+           
+           <menuitem name="Productos" id="odoo_prueba.create_productos" parent="odoo_prueba.tienda" sequence="2" action="odoo_prueba.action_window_create_productos"/>
+        
+           <menuitem name="Bodegas" id="odoo_prueba.almacen" parent="odoo_prueba.tienda" sequence="3" action="odoo_prueba.create_almacenes_action_window"/> 
+
+           <menuitem name="Inventario" id="odoo_prueba.inventario" parent="odoo_prueba.tienda" sequence="1" action="odoo_prueba.gestion_inventario_action_window"/>
+
+           <menuitem name="Balance" id="odoo_prueba.money" parent="odoo_prueba.menu_root" sequence="8" action="odoo_prueba.balance_money_action_window"/>
+
+           <menuitem name="Pedidos" id="odoo_prueba.pedidos" parent="odoo_prueba.menu_root" sequence="6" action="odoo_prueba.pedidos_venta_action_window"/>
+
+           <menuitem name="Compra a Proveedores" id="odoo_prueba.proveedores" parent="odoo_prueba.menu_root" sequence="5" action="odoo_prueba.provedores_store_action_window"/>
+
+           <menuitem name="Envios" id="odoo_prueba.Envios" parent="odoo_prueba.menu_root" sequence="7" action="odoo_prueba.action_window_envios_sales"/>
+    </data>
+    
+
+</odoo>

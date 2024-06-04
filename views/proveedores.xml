@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="odoo_prueba.provedores_store_list">
+        <field name="name">odoo_prueba provedores store list</field>
+        <field name="model">provedores.store</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="num_order"/>
+            <field name="products_ids"/>
+            <field name="store_id"/>
+            <field name="proveedor_id"/>
+            <field name="cost_total" sum="cost"/>
+            <field name="iva" sum="iva"/>
+            <field name="state"/>
+          </tree>
+        </field>
+      </record>
+  
+  
+      <record model="ir.ui.view" id="odoo_prueba.provedores_store_form">
+        <field name="name">pedidos</field>
+        <field name="model">provedores.store</field>
+        <field name="arch" type="xml">
+          <form>
+            <header>
+              <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+              <div class="oe_title">
+                <h1>
+                  <field name="num_order" readonly="1"/>
+                </h1>
+              </div>
+              <group>
+                <field name="date_pedido" readonly="True"/>
+                <field name="store_id"/>
+                <field name="proveedor_id"/>
+              </group>
+              <field name="products_ids"/>
+              <group class="oe_subtotal_footer oe_right">
+                <field name="cost_total"/>
+                <field name="iva"/>
+              </group>
+              <footer>
+                  <button name="proveedores_pago" type="object" string="Confirmar Compra" class='btn btn-info btn-sm' />
+                  
+                  <button style="margin-left: 20px; " name="cancela_compra" type="object" string="Cancelar compra" class='btn btn-info btn-sm'/> 
+              </footer>
+            </sheet>
+          </form>
+        </field>
+      </record>
+  
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="odoo_prueba.provedores_store_action_window">
+        <field name="name">Compras de Productos</field>
+        <field name="res_model">provedores.store</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+  
+    
+  
+  
+  
+    </data>
+  </odoo>

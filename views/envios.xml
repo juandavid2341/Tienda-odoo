@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="odoo_prueba.envio_sales_list">
+        <field name="name">odoo_prueba envios sales list</field>
+        <field name="model">envios.sales</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="cod_sales"/>
+            <field name="date_start"/>
+            <field name="address"/>
+            <field name="value"/>
+            <field name="driver"/>
+            <field name="state"/>
+          </tree>
+        </field>
+      </record>
+  
+  
+      <record model="ir.ui.view" id="odoo_prueba.envios_sales_form">
+        <field name="name">odoo_prueba envios sales form</field>
+        <field name="model">envios.sales</field>
+        <field name="arch" type="xml">
+          <form>
+            <header>
+              <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+              <group>
+                <field name='id'/>
+                <field name="date_start"/>
+                <field name="cod_sales"/>
+                <field name="address"/>
+                <field name="value"/>
+                <field name="driver"/>
+              </group>
+              <field name="bill_associated" readonly='False'/>
+              <footer>
+                <button name="delivered" type="object" string="Entregado" class="btn btn-info btn-sm"/>
+              </footer>
+            </sheet>
+          </form>
+        </field>
+      </record>
+  
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="odoo_prueba.action_window_envios_sales">
+        <field name="name">Envios</field>
+        <field name="res_model">envios.sales</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+  
+    
+  
+  
+  
+    </data>
+  </odoo>

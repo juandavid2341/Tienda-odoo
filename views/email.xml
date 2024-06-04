@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+    
+        <record id="odoo_prueba.email_template_name" model="mail.template">  
+            <field name="name">Correos Ventas</field>
+            <field name="model_id" ref="model_pedidos_venta"/>
+            <field name="subject">Factura De Pedido</field>
+            <field name="email_from">jd212160@gmail.com</field>
+            <field name="email_to">{{ object.email_user }}</field>
+            <field name="report_template" ref="odoo_prueba.report_pedidos_venta"/>
+            <field name="body_html" type="html">
+               <div>
+                    <p>
+                        Gracias Por Su Compra Sr. ${object.cliente_id.name}
+                    </p>
+               </div>
+            </field>
+        </record>
+
+
+
+        <record id="odoo_prueba.record_server_venta" model="ir.actions.server">
+            <field name="name">Envia Factura</field>
+            <field name="model_id" ref="model_pedidos_venta"/>
+            <field name="binding_model_id" ref="model_pedidos_venta"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="odoo_prueba.email_template_name"/>
+        </record>
+    </data>
+ </odoo>

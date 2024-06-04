@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="odoo_prueba.create_productos_list">
+        <field name="name">odoo_prueba create productos list</field>
+        <field name="model">create.productos</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>
+            <field name="cost"/>
+            <field name="price"/>
+            <field name="proveedores_id"/>
+          </tree>
+        </field>
+      </record>
+  
+  
+      <record model="ir.ui.view" id="odoo_prueba.create_productos_form">
+        <field name="name">odoo_prueba create productos form</field>
+        <field name="model">create.productos</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="name"/>
+                <field name="image_1920" widget="image" style="width: 200px; height: 200px"/>
+                <field name="cost"/>
+                <field name="price"/>
+                <field name="proveedores_id"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="odoo_prueba.create_productos_kanban">
+        <field name="name">odoo_prueba create productos kanban</field>
+        <field name="model">create.productos</field>
+        <field name="arch" type="xml">
+          <kanban>
+            <field name="id"/>
+                <field name="name"/>
+                <field name="image_1920"/>
+                <field name="cost"/>
+                <field name="price"/>
+                <field name="proveedores_id"/>
+                <templates>
+                  <t t-name="kanban-box">
+                    <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                      <div style="display: flex;">
+                        <div class="oe_kanban_image" style="flex: 0;">
+                          <img style="width: 135px; height: 150px;  object-fit: cover;" class="oe_kanban_image_inner_pic" t-att-src="kanban_image('create.productos', 'image_1920', record.id.raw_value)"/>
+                      </div>
+                      <div style="flex: 1; padding-left: 10px; font-family: arial;">
+                      <div>
+                        <span style="font-size: 16px; margin-left: 40px; color: #000;"><field name="name"/></span>
+                      </div>
+
+                      <div>
+                        <span>Coste:<field name="cost"/></span>
+                      </div>
+
+                      <div>
+                        <span>Precio:<field name="price"/></span>
+                      </div>
+                      </div>
+                      </div>
+                    </div>
+                  </t>
+                </templates>
+          </kanban>
+        </field>
+      </record>
+  
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="odoo_prueba.action_window_create_productos">
+        <field name="name">Productos</field>
+        <field name="res_model">create.productos</field>
+        <field name="view_mode">tree,form,kanban</field>
+      </record>
+  
+  
+    
+  
+  
+  
+    </data>
+  </odoo>

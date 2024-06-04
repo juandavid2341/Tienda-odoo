@@ -1,0 +1,11 @@
+<odoo>
+    <record id="odoo_prueba.report_pedidos_venta" model="ir.actions.report">
+        <field name="name">Pedidos</field>
+        <field name="model">pedidos.venta</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo_prueba.template_pedidos_ventas</field>
+        <field name="report_file">odoo_prueba.template_pedidos_ventas</field>
+    </record>
+    
+
+</odoo>

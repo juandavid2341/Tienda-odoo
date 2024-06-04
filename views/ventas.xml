@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="odoo_prueba.producto_ventas_list">
+        <field name="name">odoo_prueba producto_ventas list</field>
+        <field name="model">producto.ventas</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="stored_product"/>
+            <field name="price"/>
+            <field name="sales_amount"/>
+            <field name="discount"/>
+            <field name="total"/>
+          </tree>
+        </field>
+      </record>
+  
+  
+      <record model="ir.ui.view" id="odoo_prueba.producto_ventas_form">
+        <field name="name">odoo_prueba producto_ventas list</field>
+        <field name="model">producto.ventas</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="stored_product"/>
+                <field name="price"/>
+                <field name="sales_amount"/>
+                <field name="discount"/>
+                <field name="total"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+  
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="odoo_prueba.producto_ventas_action_window">
+        <field name="name">Ventas</field>
+        <field name="res_model">producto.ventas</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+  
+    
+  
+  
+  
+    </data>
+  </odoo>

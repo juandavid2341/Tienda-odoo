@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_create_cliente,create.cliente,model_create_cliente,,1,1,1,1
+access_create_productos,create.productos,model_create_productos,,1,1,1,1
+access_create_almacenes,create.almacenes,model_create_almacenes,,1,1,1,1
+access_gestion_inventario,gestion.inventario,model_gestion_inventario,,1,1,1,1
+access_producto_ventas,producto.ventas,model_producto_ventas,,1,1,1,1
+access_pedidos_venta,pedidos.venta,model_pedidos_venta,,1,1,1,1
+access_provedores_store,provedores.store,model_provedores_store,,1,1,1,1
+access_compra_proveedores,compra.proveedores,model_compra_proveedores,,1,1,1,1
+access_balance_money,balance.money,model_balance_money,,1,1,1,1
+access_envios_sales,envios.sales,model_envios_sales,,1,1,1,1
+
+
+

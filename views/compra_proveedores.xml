@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="odoo_prueba.compra_proveedores_list">
+        <field name="name">odoo_prueba gestion inventario list</field>
+        <field name="model">compra.proveedores</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="stored_product"/>
+            <field name="cost"/>
+            <field name="sales_amount"/>
+            <field name="total"/>
+          </tree>
+        </field>
+      </record>
+  
+  
+      <record model="ir.ui.view" id="odoo_prueba.compra_proveedores_form">
+        <field name="name">odoo_prueba gestion inventario form</field>
+        <field name="model">compra.proveedores</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="stored_product"/>
+                <field name="cost"/>
+                <field name="sales_amount"/>
+                <field name="total"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+  
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="odoo_prueba.compra_proveedores_action_window">
+        <field name="name">Inventario</field>
+        <field name="res_model">compra.proveedores</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+  
+    
+  
+  
+  
+    </data>
+  </odoo>

@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="odoo_prueba.gestion_inventario_list">
+        <field name="name">odoo_prueba gestion inventario list</field>
+        <field name="model">gestion.inventario</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="product_id"/>
+            <field name="amount"/>
+            <field name="store_id"/>
+          </tree>
+        </field>
+      </record>
+  
+  
+      <record model="ir.ui.view" id="odoo_prueba.gestion_inventario_form">
+        <field name="name">odoo_prueba gestion inventario form</field>
+        <field name="model">gestion.inventario</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="product_id"/>
+                <field name="amount"/>
+                <field name="store_id"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+  
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="odoo_prueba.gestion_inventario_action_window">
+        <field name="name">Inventario</field>
+        <field name="res_model">gestion.inventario</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+  
+    
+  
+  
+  
+    </data>
+  </odoo>

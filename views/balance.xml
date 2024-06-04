@@ -1,0 +1,54 @@
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="odoo_prueba.balance_money_list">
+            <field name="name">Balance list</field>
+            <field name="model">balance.money</field>
+            <field name="arch" type="xml">
+            <tree delete="0">
+                <field name="date"/>
+                <field name="stored" sum="ganancia"/>
+                <field name="invested" sum="inversion"/>
+                <field name="revenue" sum="total"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+            <record model="ir.ui.view" id="odoo_prueba.balance_money_form">
+                <field name="name">Balance</field>
+                <field name="model">balance.money</field>
+                <field name="arch" type="xml">
+                    <form delete="0">
+                        <sheet>
+                            <group>
+                                <field name="date"/>
+                                <field name="stored"/>
+                                <field name="invested"/>
+                                <field name="revenue" decoration-danger="0 > revenue" decoration-success="revenue > 0"/>
+                            </group>
+                        </sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="activity_ids"/>
+                            <field name="message_ids"/>
+                         </div>
+                    </form>
+                </field>
+            </record>
+
+
+
+            <record model="ir.actions.act_window" id="odoo_prueba.balance_money_action_window">
+                <field name="name">Balance Money</field>
+                <field name="res_model">balance.money</field>
+                <field name="view_mode">tree,form</field>
+              </record>
+    
+        
+    
+    </data>
+    
+
+</odoo>

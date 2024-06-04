@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="odoo_prueba.template_pedidos_ventas">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="customer">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <table class="table table-bordered">
+                                <thead class="table-dark" style="color: #fff;">
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Productos</th>
+                                        <th>Cantidad</th>
+                                        <th>Desc Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cliente</th>
+                                        <th>Descuento</th>
+                                        <th>Total</th>
+                                        <th>19% Iva</th>
+                                    </tr>
+                                </thead>
+
+                                
+                            <tr>
+                                <td><span t-esc="customer.name"/></td>
+                                <td>
+                                    <t t-foreach="customer.products_ids" t-as="product">
+                                        <span class="product-name" t-esc="product.stored_product.name"/><br/>
+                                        <hr/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <t t-foreach="customer.products_ids" t-as="product">
+                                        <span class="product-name" t-esc="product.sales_amount"/><br/>
+                                        <hr/>
+                                    </t>
+                                </td>
+                                
+                                <td>
+                                    <t t-foreach="customer.products_ids" t-as="product">
+                                        <span class="product-name" t-esc="('{:,.3g}'.format(product.discount))"/>%<br/>
+                                        <hr/>
+                                    </t>
+                                </td>
+                                
+                                <td>
+                                    <t t-foreach="customer.products_ids" t-as="product">
+                                        <span class="product-name" t-esc="('{:,.2f}'.format(product.total))"/><br/>
+                                        <hr/>
+                                    </t>
+                                </td>
+                                
+                                <td><span t-esc="customer.cliente_id.name"/></td>
+                                <td><span t-esc="('{:,.3g}'.format(customer.discount_total))"></span>%</td>
+                                <td><span t-esc="('{:,.2f}'.format(customer.price_total))"/></td>
+                                <td><span t-esc="('{:,.2f}'.format(customer.iva))"/></td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</data>
+</odoo>
